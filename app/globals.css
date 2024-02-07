@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+/* swiper styles */
+.swiper-horizontal > .swiper-pagination .swiper-pagination-bullets,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: #f13024;
+}
+
+@layer base {
+  body {
+    @apply bg-[#ecf0f3] tracking-wide;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-4xl;
+  }
+
+  li {
+    @apply cursor-pointer;
+  }
+  .section {
+    @apply w-full h-screen pt-[60px] xl:pt-[120px];
+  }
+  .skills-tabs {
+    @apply flex justify-center items-center gap-2 border-2 p-2 rounded-full shadow-inner shadow-[#1c1c1c] bg-gradient-to-r from-neutral-800 to-orange-500 md:w-[80%] hover:scale-105 duration-500 ease-in-out w-full;
+  }
+  .main-buttons {
+    @apply w-[50%] xl:w-[35%] rounded-full text-white text-xl  py-3  bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-yellow-500 via-orange-600 to-blue-600 shadow-inner shadow-[#1c1c1c] border border-white hover:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] hover:from-yellow-700 hover:via-orange-700 hover:to-blue-600 hover:text-white hover:font-normal duration-200 hover:shadow-none hover:border-[#121212];
+  }
+  .active {
+    @apply text-orange-400;
+  }
+}
