@@ -1,38 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import { motion, easeInOut } from "framer-motion";
 import { fadeIn } from "@/variants";
+import emailjs from "@emailjs/browser";
 
 const EmailSection = () => {
-  const [emailSubmited, setEmailSubmited] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmited(true);
-    }
+    emailjs
+      .sendForm("service_bups2cl", "template_e1rjz18", form.current, {
+        publicKey: "0r5OJ-xS4PhIbXPVI",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -87,16 +78,13 @@ const EmailSection = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.2 }}
       >
-        <form className="flex flex-col" onSubmit={handleSubmit}>
+        <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
           <div className="mb-6">
-            <label
-              htmlFor="email"
-              className="text-white block mb-2 text-sm font-medium"
-            >
+            <label className="text-white block mb-2 text-sm font-medium">
               Your Email
             </label>
             <input
-              name="email"
+              name="user_email"
               type="email"
               id="email"
               required
@@ -106,10 +94,11 @@ const EmailSection = () => {
           </div>
           <div className="mb-6">
             <label
-              htmlFor="subject"
+              type="text"
+              name="user_name"
               className="text-white block mb-2  text-sm font-medium"
             >
-              Subject
+              Name
             </label>
             <input
               name="subject"
@@ -117,7 +106,7 @@ const EmailSection = () => {
               id="subject"
               required
               className="bg-[#121212] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Subject"
+              placeholder="Your Name"
             />
           </div>
           <div className="mb-6">
@@ -136,15 +125,11 @@ const EmailSection = () => {
           </div>
           <button
             type="submit"
+            value="Send"
             className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
             Send Message
           </button>
-          {emailSubmited && (
-            <p className="text-green-500 text-sm mt-2">
-              Email sent successfully!
-            </p>
-          )}
         </form>
       </motion.div>
     </section>
@@ -152,3 +137,4 @@ const EmailSection = () => {
 };
 
 export default EmailSection;
+
