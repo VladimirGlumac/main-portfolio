@@ -31,7 +31,7 @@ const projectData = [
     image: "/projects/project2.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/VladimirGlumac/CrustyCreations",
-    previewUrl: "crusty-creations.netlify.app",
+    previewUrl: "https://crusty-creations.netlify.app/",
   },
   {
     id: 4,
