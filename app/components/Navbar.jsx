@@ -156,9 +156,9 @@ const Navbar = () => {
                 <div className="rounded-full   p-3 cursor-pointer hover:scale-105 ease-in duration-500 bg-white">
                   <FaLinkedinIn />
                 </div>
-                <div className="rounded-full   p-3 cursor-pointer hover:scale-105 ease-in duration-500 bg-white">
-                  <FaGithub />
-                </div>
+                <a href="https://github.com/VladimirGlumac" target="_blank" rel="noopener noreferrer" className="rounded-full p-3 cursor-pointer hover:scale-105 ease-in duration-500 bg-white">
+  <FaGithub />
+</a>
               </div>
             </div>
           </div>
