@@ -17,6 +17,15 @@ const projectData = [
   },
   {
     id: 2,
+    title: "Fitness World Website",
+    description: "Next.js, Tailwind",
+    image: "/projects/gymwebsite.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/VladimirGlumac/Fitness-World-Website",
+    previewUrl: "https://fittnes-wolrd-belgrade.netlify.app/",
+  },
+  {
+    id: 3,
     title: "Ticket App",
     description: "Next.js, Tailwind, MongoDB",
     image: "/projects/TicketApp1.png",
@@ -25,7 +34,7 @@ const projectData = [
     previewUrl: "https://ticket-app-demo.netlify.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Bakery website",
     description: "React.js, Css, Framer-Motion",
     image: "/projects/project2.png",
@@ -34,7 +43,7 @@ const projectData = [
     previewUrl: "https://crusty-creations.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "E-commerce Application",
     description: "React.js, Css",
     image: "/projects/project3.png",
@@ -43,7 +52,7 @@ const projectData = [
     previewUrl: "https://fotographix.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Flight Agency",
     description: "React.js, Css, Framer-Motion",
     image: "/projects/project4.png",
@@ -52,7 +61,7 @@ const projectData = [
     previewUrl: "https://flight-agency-demo.netlify.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Cinema APP",
     description: "React Native, TMDb API",
     image: "/projects/project5.jpg",
@@ -61,7 +70,7 @@ const projectData = [
     previewUrl: "#projects",
   },
   {
-    id: 7,
+    id: 8,
     title: "Automobile Dealership App",
     description: "React Native",
     image: "/projects/project6.jpg",
