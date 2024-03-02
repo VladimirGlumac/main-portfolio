@@ -2,19 +2,17 @@ import React from "react";
 import Link from "next/link";
 import { HiCodeBracket } from "react-icons/hi2";
 import { IoEyeSharp } from "react-icons/io5";
+import Image from "next/image";
 
 function ProjectCard({ imgUrl, title, description, gitUrl, previewUrl }) {
   return (
     <div className="">
-      <div
-        className="h-52 md:h-72 rounded-t-xl relative group  bg-center"
-        style={{
-          background: `url(${imgUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] rounded-t-xl bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+      <div className="h-52 md:h-72  relative group  bg-center">
+        <Image src={imgUrl} fill alt="project image" />
+        <div
+          className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818]  bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 z-10
+        "
+        >
           <Link
             href={gitUrl}
             className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
@@ -38,3 +36,4 @@ function ProjectCard({ imgUrl, title, description, gitUrl, previewUrl }) {
 }
 
 export default ProjectCard;
+
