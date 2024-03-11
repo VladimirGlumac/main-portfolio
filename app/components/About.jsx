@@ -150,7 +150,7 @@ function About() {
             className="text-base md:text-lg"
           >
             Throughout my coding journey, I&#39;ve gained hands-on experience in
-            building with HTML, CSS, JavaScript, React, Next.js, RESTful API, MongoDB and
+            building with HTML, CSS, JavaScript, jQuery, React, Next.js, RESTful API, MongoDB and
             Tailwind CSS. Passionate about crafting seamless user experiences,
             I&#39;ve contributed to a variety of projects showcasing creativity
             and problem-solving skills.
